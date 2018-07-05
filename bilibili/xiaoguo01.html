@@ -88,6 +88,12 @@
             top: -130px;
             left: 628px;
         }
+        .groom-module img:hover+p:hover{
+            display: none;
+        }
+        .groom-module img:hover+p+div,div:hover{
+            display:block;
+        }
     </style>
     <script src="js/jquery-1.12.4.js"></script>
 </head>
@@ -196,18 +202,10 @@
 </div>
 <script>
     $(function () {
-        $(".recommend-module").mouseover(function () {
-            // $(".title1").hide();
-            // $(".card-mark,.watch-later-trigger").show();
-            $(".rec-btn").css("display", "inline-block");
-        }).mouseout(function () {
-            // $(".title1").show();
-            // $(".card-mark,.watch-later-trigger").hide();
-            $(".rec-btn").css("display", "none");
-        });
         $(".groom-module img").mouseover(function () {
-            $(".title1").hide();
-            $("this").next().next().show();
+           $(this).siblings("p").hide();
+        }).mouseout(function () {
+            $(this).siblings("p").show();
         });
     });
 </script>
